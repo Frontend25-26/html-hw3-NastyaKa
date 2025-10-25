@@ -1,6 +1,3 @@
-/*кошмар, так больно и тяжко без js...*/
-/*я умерла, не сумев додебажить другой вариант Т_Т*/
-
 html, body {
     font-family: Helvetica, sans-serif;
     font-size: 1.5rem;
@@ -15,14 +12,36 @@ html, body {
     background: lavender;
 }
 
-.start {
+.start,
+#start-button:checked ~ .quiz,
+#start-button:checked ~ #end-button-label,
+#end-button:checked ~ .end,
+#slide1:checked ~ .questions #q1,
+#slide2:checked ~ .questions #q2,
+#slide3:checked ~ .questions #q3,
+#slide4:checked ~ .questions #q4,
+#slide5:checked ~ .questions #q5,
+#slide6:checked ~ .questions #q6 {
     display: flex;
+}
+
+.questions,
+.question {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.start,
+.end {
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#start-button-label {
+#start-button-label,
+#end-button-label {
     position: relative;
     display: flex;
     justify-content: center;
@@ -31,24 +50,25 @@ html, body {
     font-size: 1.6rem;
 }
 
+.answer label:hover,
 #start-button-label:hover,
+#end-button-label:hover,
 label.checker:hover {
     text-shadow: 2px 2px lightgray;
     cursor: pointer;
 }
 
-#start-button:checked ~ .quiz {
-    display: flex;
-}
-
+.questions > section,
 #start-button:checked ~ .start,
-#start-button:checked ~ #start-button-label {
-    display: none;
-}
-
+#end-button:checked ~ .quiz,
+#end-button:checked ~ #end-button-label,
+#start-button:checked ~ #start-button-label,
 input[name="slider"],
 input[id="start-button"],
-input.checker {
+input[id="end-button"],
+input.checker,
+.end,
+#end-button-label {
     display: none;
 }
 
@@ -71,19 +91,13 @@ input.checker {
 .questions {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
 }
 
 .question {
-    display: flex;
+    min-width: 70%;
     height: 80%;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
-    justify-content: center;
-    justify-items: center;
 }
 
 .question_text {
@@ -95,20 +109,31 @@ input.checker {
     margin-bottom: 15px;
 }
 
+.table-box {
+    border-radius: 15px;
+    min-width: 40%;
+    padding: 10px;
+    margin: 10px;
+    border: 3px outset lightblue;
+}
+
 .checker {
     font-size: 0.7em;
     display: flex;
     align-self: end;
+    margin-top: 10px;
 }
 
 .answer {
-    padding-left: 10px;
+    width: 100%;
     background-color: #FFF8E7;
     border-radius: 15px;
     height: 70%;
     display: grid;
-    justify-content: start;
-    grid-template-columns: auto auto;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 1%;
 }
 
@@ -116,11 +141,6 @@ input.checker {
     display: flex;
     justify-self: stretch;
     align-items: center;
-}
-
-.answer label:hover {
-    text-shadow: 2px 2px lightgray;
-    color: #331113;
 }
 
 .answer > input {
@@ -142,6 +162,11 @@ input.checker {
     cursor: pointer;
 }
 
+.cute-gif {
+    border-radius: 15px;
+    box-shadow: 2px 4px gray;
+}
+
 #slide1:checked ~ .nav label[for="slide1"],
 #slide2:checked ~ .nav label[for="slide2"],
 #slide3:checked ~ .nav label[for="slide3"],
@@ -151,34 +176,21 @@ input.checker {
     background: blueviolet;
 }
 
-.questions > section {
-    display: none;
-}
-
-#slide1:checked ~ .questions #q1,
-#slide2:checked ~ .questions #q2,
-#slide3:checked ~ .questions #q3,
-#slide4:checked ~ .questions #q4,
-#slide5:checked ~ .questions #q5,
-#slide6:checked ~ .questions #q6 {
-    display: flex;
-}
-
-#q1check:checked ~ #q1 .answer > label.OK,
-#q2check:checked ~ #q2 .answer > label.OK,
-#q3check:checked ~ #q3 .answer > label.OK,
-#q4check:checked ~ #q4 .answer > label.OK,
-#q5check:checked ~ #q5 .answer > label.OK,
-#q6check:checked ~ #q6 .answer > label.OK {
+#q1check:checked ~ #q1 .answer .table-box > label.OK,
+#q2check:checked ~ #q2 .answer .table-box > label.OK,
+#q3check:checked ~ #q3 .answer .table-box > label.OK,
+#q4check:checked ~ #q4 .answer .table-box > label.OK,
+#q5check:checked ~ #q5 .answer .table-box > label.OK,
+#q6check:checked ~ #q6 .answer .table-box > label.OK {
     color: green;
     font-weight: bold;
 }
 
-#q1check:checked ~ #q1 .answer > label.WA,
-#q2check:checked ~ #q2 .answer > label.WA,
-#q3check:checked ~ #q3 .answer > label.WA,
-#q4check:checked ~ #q4 .answer > label.WA,
-#q5check:checked ~ #q5 .answer > label.WA,
-#q6check:checked ~ #q6 .answer > label.WA {
+#q1check:checked ~ #q1 .answer .table-box > label.WA,
+#q2check:checked ~ #q2 .answer .table-box > label.WA,
+#q3check:checked ~ #q3 .answer .table-box > label.WA,
+#q4check:checked ~ #q4 .answer .table-box > label.WA,
+#q5check:checked ~ #q5 .answer .table-box > label.WA,
+#q6check:checked ~ #q6 .answer .table-box > label.WA {
     color: red;
 }
