@@ -7,8 +7,149 @@
     <title>HW3</title>
 </head>
 <body>
-    <div id="app">
-        
+
+
+<input type="radio" id="start-button">
+<div class="start">
+    <h1>Добро пожаловать на квиз!</h1>
+</div>
+<label id="start-button-label" for="start-button">Нажми, чтоб перейти к вопросам!</label>
+
+<div class="quiz">
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+    <input type="radio" name="slider" id="slide3">
+    <input type="radio" name="slider" id="slide4">
+    <input type="radio" name="slider" id="slide5">
+    <input type="radio" name="slider" id="slide6">
+
+    <div class="questions">
+        <input type="radio" class="checker" name="q1check" id="q1check"/>
+        <input type="radio" class="checker" name="q2check" id="q2check"/>
+        <input type="radio" class="checker" name="q3check" id="q3check"/>
+        <input type="radio" class="checker" name="q4check" id="q4check"/>
+        <input type="radio" class="checker" name="q5check" id="q5check"/>
+        <input type="radio" class="checker" name="q6check" id="q6check"/>
+
+        <section class="question" id="q1">
+            <p class="question_text">Для чего используют <code>wbr</code>?</p>
+            <div class="answer">
+                <input type="radio" name="q1a" id="q1a1"/>
+                <label for="q1a1" class="WA">Подсветка слова</label>
+
+                <input type="radio" name="q1a" id="q1a2"/>
+                <label for="q1a2" class="WA">Конец абзаца</label>
+
+                <input type="radio" name="q1a" id="q1a3"/>
+                <label for="q1a3" class="OK">Возможный перенос длинных слов</label>
+
+                <input type="radio" name="q1a" id="q1a4"/>
+                <label for="q1a4" class="WA">Обернуть в кавычки</label>
+            </div>
+            <label class="checker" for="q1check">Проверить ответ</label>
+        </section>
+
+        <section class="question" id="q2">
+            <p class="question_text">Какие из этих типов примитивны в JS?</p>
+            <div class="answer">
+                <input type="checkbox" name="q2a" id="q2a1"/>
+                <label for="q2a1" class="WA"><code>object</code></label>
+
+                <input type="checkbox" name="q2a" id="q2a2"/>
+                <label for="q2a2" class="OK"><code>symbol</code></label>
+
+                <input type="checkbox" name="q2a" id="q2a3"/>
+                <label for="q2a3" class="OK"><code>null</code></label>
+
+                <input type="checkbox" name="q2a" id="q2a4"/>
+                <label for="q2a4" class="OK"><code>bigint</code></label>
+            </div>
+            <label class="checker" for="q2check">Проверить ответ</label>
+        </section>
+
+        <section class="question" id="q3">
+            <p class="question_text">Зачем нужна оптимизация Idle-time в JS?</p>
+            <div class="answer">
+                <input type="radio" name="q3a" id="q3a1"/>
+                <label for="q3a1" class="WA">Такой не существует</label>
+
+                <input type="radio" name="q3a" id="q3a2"/>
+                <label for="q3a2" class="WA">Чтоб не тормозить приложение</label>
+
+                <input type="radio" name="q3a" id="q3a3"/>
+                <label for="q3a3" class="WA">Чтоб чаще чистить короткоживущие</label>
+
+                <input type="radio" name="q3a" id="q3a4"/>
+                <label for="q3a4" class="OK">Чтоб не мешать работе кода</label>
+            </div>
+            <label class="checker" for="q3check">Проверить ответ</label>
+        </section>
+
+        <section class="question" id="q4">
+            <p class="question_text">Какие отличия <code>WeakSet</code> от <code>Set</code>?</p>
+            <div class="answer">
+                <input type="checkbox" name="q4a" id="q4a1"/>
+                <label for="q4a1" class="OK">Отсутствует свойство size</label>
+
+                <input type="checkbox" name="q4a" id="q4a2"/>
+                <label for="q4a2" class="WA">Элементы долго перебирать</label>
+
+                <input type="checkbox" name="q4a" id="q4a3"/>
+                <label for="q4a3" class="OK">Можем добавлять только объекты</label>
+
+                <input type="checkbox" name="q4a" id="q4a4"/>
+                <label for="q4a4" class="WA">Можем добавлять только примитивы</label>
+            </div>
+            <label class="checker" for="q4check">Проверить ответ</label>
+        </section>
+
+        <section class="question" id="q5">
+            <p class="question_text">От чего не зависит значение <code>this</code>?</p>
+            <div class="answer">
+                <input type="radio" name="q5a" id="q5a1"/>
+                <label for="q5a1" class="WA">Окружение</label>
+
+                <input type="radio" name="q5a" id="q5a2"/>
+                <label for="q5a2" class="WA">Как оказались в функции</label>
+
+                <input type="radio" name="q5a" id="q5a3"/>
+                <label for="q5a3" class="OK">Где была объявлена функция</label>
+
+                <input type="radio" name="q5a" id="q5a4"/>
+                <label for="q5a4" class="WA">Режим работы интерпретатора</label>
+            </div>
+            <label class="checker" for="q5check">Проверить ответ</label>
+        </section>
+
+        <section class="question" id="q6">
+            <p class="question_text">Что из перечисленного не является допустимым значением атрибута <code>type</code> для тега
+                <code>input</code>?</p>
+            <div class="answer">
+                <input type="radio" name="q6a" id="q6a1"/>
+                <label for="q6a1" class="WA"><code>radio</code></label>
+
+                <input type="radio" name="q6a" id="q6a2"/>
+                <label for="q6a2" class="WA"><code>button</code></label>
+
+                <input type="radio" name="q6a" id="q6a3"/>
+                <label for="q6a3" class="WA"><code>text</code></label>
+
+                <input type="radio" name="q6a" id="q6a4"/>
+                <label for="q6a4" class="OK"><code>image-button</code></label>
+            </div>
+            <label class="checker" for="q6check">Проверить ответ</label>
+        </section>
     </div>
+
+    <div class="nav">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+        <label for="slide5"></label>
+        <label for="slide6"></label>
+    </div>
+</div>
+
 </body>
 </html>
